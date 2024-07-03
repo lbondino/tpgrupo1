@@ -1,0 +1,39 @@
+{% include 'header.html'%}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header">Modificar Firmante</div>
+            <div class="card-body">
+                <form action="/firmantes/edit/actualizar" method="post">
+                    <input type="hidden" name="txtid" value="{{firmantes['id']}}">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" id="" aria-describedby="helpId"
+                            placeholder="Nombre" value="{{firmantes['nombre']}}"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="" class="form-label">DNI</label>
+                        <input type="text" class="form-control" name="dni" id="" aria-describedby="helpId"
+                            placeholder="dni" value="{{firmantes['dni']}}"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="mail" id="" aria-describedby="helpId"
+                            placeholder="Email" value="{{firmantes['mail']}}"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="" class="form-label">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" name="fecha" id="" aria-describedby="helpId" value="{{firmantes['fecha']}}" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-4"></div>
+</div>
+{% include 'footer.html'%}

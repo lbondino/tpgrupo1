@@ -1,0 +1,39 @@
+{% include 'header.html' %}
+<div class="content">
+<h1 class="text-center">Lista de Firmantes</h1>
+
+<div class="table-responsive">
+    <table class="table table-primary"><br>
+        <thead class="table table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre Completo</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Email</th>
+                <th scope="col">Fecha de Nacimiento</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for firmante in firmantes %}
+            <tr class="">
+                <td scope="row">{{ loop.index }} </td>
+                <td> {{ firmante['nombre'] }} </td>
+                <td> {{ firmante['dni']}}</td>
+                <td> {{ firmante['mail']}}</td>
+                <td> {{ firmante['fecha']}}</td>
+                <td>
+                    <a href="/firmantes/edit/{{firmante['id']}}" class="btn btn-success" style="width: 30%;">Editar ✏️</a>
+                    <a href="/firmantes/borrar/{{firmante['id']}}" class="btn btn-danger" style="width: 30%;">Eliminar 🗑️</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a href="/firmantes/create" class="btn btn-primary btn-lg" style="width: 15%;">Nuevo 👤</a>
+    </div>
+</div>
+</div>
+
+{% include 'footer.html' %}
